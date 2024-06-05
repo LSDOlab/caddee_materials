@@ -20,12 +20,12 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='lsdo_project_template',
-    version=get_version('lsdo_project_template/__init__.py'),
-    author='Author name',
-    author_email='author@gmail.com',
+    name='caddie_materials',
+    version=get_version('caddee_materials/__init__.py'),
+    author='Michael Warner',
+    author_email='HgXe14@gmail.com',
     license='LGPLv3+',
-    keywords='python project template repository package',
+    keywords='caddee material utility',
     url='http://github.com/LSDOlab/lsdo_project_template',
     download_url='http://pypi.python.org/pypi/lsdo_project_template',
     description='A template repository/package for LSDOlab projects',
