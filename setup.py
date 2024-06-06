@@ -20,7 +20,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='caddie_materials',
+    name='caddee_materials',
     version=get_version('caddee_materials/__init__.py'),
     author='Michael Warner',
     author_email='HgXe14@gmail.com',
