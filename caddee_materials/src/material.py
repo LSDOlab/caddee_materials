@@ -1,6 +1,6 @@
 import numpy as np
 from csdl_alpha.utils.typing import VariableLike
-
+import csdl_alpha as csdl
 import numpy as np
 import xml.etree.ElementTree as ET
 import sys
@@ -70,16 +70,19 @@ class Material():
         root.set('name', self.name)
 
         if self.density is not None:
-            ET.SubElement(root, 'density').text = str(self.density)
+            density = self.density.value if isinstance(self.density, csdl.Variable) else self.density
+            ET.SubElement(root, 'density').text = str(density)
 
         if self.compliance is not None:
+            compliance = self.compliance.value if isinstance(self.compliance, csdl.Variable) else self.compliance
             compliance_el = ET.SubElement(root, 'compliance')
-            for row in self.compliance:
+            for row in compliance:
                 ET.SubElement(compliance_el, 'row').text = ' '.join(map(str, row))
 
         if self.strength is not None:
+            strength = self.strength.value if isinstance(self.strength, csdl.Variable) else self.strength
             strength_el = ET.SubElement(root, 'strength')
-            for row in self.strength:
+            for row in strength:
                 ET.SubElement(strength_el, 'row').text = ' '.join(map(str, row))
 
         tree = ET.ElementTree(root)

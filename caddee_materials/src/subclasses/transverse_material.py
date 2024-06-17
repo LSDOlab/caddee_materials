@@ -45,7 +45,7 @@ class TransverseMaterial(Material):
                  
 
 
-
+    # TODO: add csdl input support
     def set_compliance(self, EA:float, ET:float, vA:float, GA:float, vT:float=None, GT:float=None):
         """Set the compliance matrix for the material.
 
