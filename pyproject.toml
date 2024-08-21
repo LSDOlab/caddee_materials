@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caddee_materials"
+description = "A package for materials data"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE.txt"}
+keywords = ["CADDEE", "materials", "utility"]
+authors = [{name = "Michael Warner", email = "mwarner@ucsd.edu"}]
+dependencies = [
+    'numpy',
+    'csdl_alpha @ git+https://github.com/LSDOlab/CSDL_alpha.git'
+]
+dynamic = ['version']
+
+[project.optional-dependencies]
+test = ['pytest']
+docs = [
+    'myst-nb',
+    'sphinx==5.3.0',
+    'sphinx_rtd_theme',
+    'sphinx-copybutton',
+    'sphinx-autoapi==2.1.0',
+    'astroid==2.15.5',
+    'numpydoc',
+    'gitpython',
+    'sphinxcontrib-collections @ git+https://github.com/anugrahjo/sphinx-collections.git',
+    'sphinxcontrib-bibtex',
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "caddee_materials.__version__"}
