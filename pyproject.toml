@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "caddee_materials"
 description = "A package for materials data"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = {file = "LICENSE.txt"}
 keywords = ["CADDEE", "materials", "utility"]
 authors = [{name = "Michael Warner", email = "mwarner@ucsd.edu"}]
