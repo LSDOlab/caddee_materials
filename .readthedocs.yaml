@@ -35,6 +35,7 @@ python:
    - requirements: requirements.txt
    - method: pip
      path: .
+     extra_requirements: docs
 
 # If using a conda environment, 
 # add the path to the Conda environment file, relative to the root of the project.
