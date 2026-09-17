@@ -1,7 +1,9 @@
 ***********************************
-# caddee_materials 0.1.0 (March 24, 2023)
+# caddee_materials 1.0.0 (September 17, 2026)
 
-Summary of major changes from the previous release.
+First stable release. Package is now published as a conda package
+(channel `HgXe`) in addition to pip/git installs, with `csdl_alpha`
+(also on the `HgXe` channel) resolved as a conda dependency.
 
 ## Old Features Removed
 
@@ -21,7 +23,7 @@ Summary of major changes from the previous release.
 
 ## Upgrade Process
 
-- Details of how to upgrade from previous versions
+- None; this is the first stable release.
 
 ## Backwards Incompatible API Changes
 

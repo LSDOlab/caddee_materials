@@ -33,3 +33,6 @@ docs = [
 
 [tool.setuptools.dynamic]
 version = {attr = "caddee_materials.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["caddee_materials*"]

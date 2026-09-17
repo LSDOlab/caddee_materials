@@ -23,6 +23,14 @@ For direct installation with all dependencies, run on the terminal or command li
 pip install git+https://github.com/LSDOlab/caddee_materials.git
 ```
 
+Alternatively, install from the `HgXe` conda channel (which also hosts the
+`csdl_alpha` dependency):
+```sh
+# NOTE: csdl_alpha is currently only published to the "test" label; once it
+# is promoted to "main" this can drop the /label/test suffix.
+conda install -c hgxe/label/test caddee_materials
+```
+
 <!-- **Enabled by**: `packages=find_packages()` in the `setup.py` file. -->
 
 ## Installation instructions for developers

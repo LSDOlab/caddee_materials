@@ -1,4 +1,4 @@
-__version__ = '0.0.1'
+__version__ = '1.0.0'
 
 from .src.material import Material
 from .src.subclasses.transverse_material import TransverseMaterial
