@@ -1,5 +1,5 @@
 # Builds the conda package from recipe/recipe.yaml and publishes it to
-# anaconda.org under the HgXe channel, where csdl_alpha (a run dependency)
+# anaconda.org under the LSDOlab channel, where csdl_alpha (a run dependency)
 # is also published.
 #
 # Runs when a GitHub Release is published (e.g. via `gh release create
@@ -23,16 +23,16 @@ jobs:
         uses: prefix-dev/rattler-build-action@v0.2.39
         with:
           recipe-path: recipe/recipe.yaml
-          # TODO: csdl_alpha is currently only on the "test" label
-          # (hgxe/label/test). Switch this to "-c HgXe -c conda-forge" once
-          # it's promoted to the "main" label.
-          build-args: -c hgxe/label/test -c conda-forge
+          # Prefer CSDL Alpha prereleases, then stable LSDOlab releases.
+          # Publish CSDL Alpha before publishing this dependent package.
+
+          build-args: -c LSDOlab/label/test -c LSDOlab -c conda-forge
           upload-artifact: false
 
-      - name: Publish to anaconda.org (HgXe)
+      - name: Publish to anaconda.org (LSDOlab)
         env:
-          ANACONDA_API_KEY: ${{ secrets.ANACONDA_API_KEY }}
+          ANACONDA_API_KEY: ${{ secrets.ANACONDA_API_TOKEN }}
         run: |
           for pkg in $(find output -type f \( -name "*.conda" -o -name "*.tar.bz2" \)); do
-            rattler-build upload anaconda -o HgXe "${pkg}"
+            rattler-build upload anaconda -o LSDOlab "${pkg}"
           done
