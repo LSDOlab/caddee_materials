@@ -23,12 +23,12 @@ For direct installation with all dependencies, run on the terminal or command li
 pip install git+https://github.com/LSDOlab/caddee_materials.git
 ```
 
-Alternatively, install from the `HgXe` conda channel (which also hosts the
+Alternatively, install from the `LSDOlab` conda channel (which also hosts the
 `csdl_alpha` dependency):
 ```sh
-# NOTE: csdl_alpha is currently only published to the "test" label; once it
-# is promoted to "main" this can drop the /label/test suffix.
-conda install -c hgxe/label/test caddee_materials
+# CSDL Alpha prereleases use the "test" label; stable releases fall back to the
+# main LSDOlab channel.
+conda install -c LSDOlab/label/test -c LSDOlab caddee_materials
 ```
 
 <!-- **Enabled by**: `packages=find_packages()` in the `setup.py` file. -->

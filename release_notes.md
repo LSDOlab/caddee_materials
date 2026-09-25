@@ -2,8 +2,8 @@
 # caddee_materials 1.0.0 (September 17, 2026)
 
 First stable release. Package is now published as a conda package
-(channel `HgXe`) in addition to pip/git installs, with `csdl_alpha`
-(also on the `HgXe` channel) resolved as a conda dependency.
+(channel `LSDOlab`) in addition to pip/git installs, with `csdl_alpha`
+(also on the `LSDOlab` channel) resolved as a conda dependency.
 
 ## Old Features Removed
 
